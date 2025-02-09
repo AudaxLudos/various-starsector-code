@@ -13,6 +13,12 @@ import java.util.Iterator;
 import java.util.List;
 
 public class Large1Effect implements EveryFrameWeaponEffectPlugin, OnFireEffectPlugin {
+    // Fires 10 arcs
+    // Each arc can ricochet to another target
+    // Each arc can only ricochet 2 times
+    // Arcs can pierce shields based on target's hard flux level
+    // Arcs will prioritize other targets
+    // Arcs will prioritize ships before missiles
     public static final int MAX_TARGETS = 10;
     public static final float ARC = 45;
     public List<ArcTarget> primaryTargets = new ArrayList<>();
@@ -116,7 +122,7 @@ public class Large1Effect implements EveryFrameWeaponEffectPlugin, OnFireEffectP
                 continue;
             }
 
-            if (!this.usedTargets.contains(other)) {
+            if (!this.usedTargets.contains(other) && other instanceof ShipAPI) {
                 if (dist < bestNotUsedDist) {
                     bestNotUsedDist = dist;
                     bestNotUsed = other;
