@@ -1,0 +1,26 @@
+{
+	"id":"vsc_large2",
+	"specClass":"projectile",
+	"type":"ENERGY",
+	"mountTypeOverride":"SYNERGY",
+	"size":"LARGE",
+	"turretSprite":"graphics/weapons/reality_disruptor_turret_base.png",
+	"turretGlowSprite":"graphics/weapons/reality_disruptor_turret_glow.png",
+	"hardpointSprite":"graphics/weapons/reality_disruptor_hardpoint_base.png",
+	"hardpointGlowSprite":"graphics/weapons/reality_disruptor_hardpoint_glow.png",		
+	"hardpointOffsets":[40, 0],
+	"turretOffsets":[30, 0],
+	"hardpointAngleOffsets":[0],
+	"turretAngleOffsets":[0],
+	"unaffectedByProjectileSpeedBonuses":true,
+	"glowColor":[255,50,50,255], # used for emp arcs as well
+	"barrelMode":"ALTERNATING",
+	"interruptibleBurst":false,
+	"animationType":"GLOW",
+	"autocharge":true,
+	"projectileSpecId":"vsc_large2_shot",
+	"fireSoundTwo":"realitydisruptor_fire",
+	"everyFrameEffect":"variousstarsectorcode.weapons.Large2Effect",
+}
+
+

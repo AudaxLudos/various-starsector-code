@@ -166,7 +166,7 @@ public class Large1Effect implements EveryFrameWeaponEffectPlugin, OnFireEffectP
 
         public void spawnArc() {
             float thickness = 20f;
-            float coreWidthMult = 0.67f ;
+            float coreWidthMult = 0.67f;
             Color color = this.weapon.getSpec().getGlowColor();
             if (this.target != null) {
                 float pierceChance = 0f;

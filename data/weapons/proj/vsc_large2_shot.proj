@@ -1,0 +1,17 @@
+{
+	"id":"vsc_large2_shot",
+	"specClass":"projectile",
+	"spawnType":"BALLISTIC",
+	"collisionClass":"NONE",
+	"collisionClassByFighter":"NONE",
+	"length":0,
+	"hitGlowRadius":0,
+	"width":0,
+	"fadeTime":0,
+	"fringeColor":[0,0,0,0],
+	"coreColor":[0,0,0,0],
+	"textureScrollSpeed":64.0,
+	"pixelsPerTexel":5.0,
+	"bulletSprite":"",
+	"onFireEffect":"variousstarsectorcode.weapons.Large2Effect",
+}
