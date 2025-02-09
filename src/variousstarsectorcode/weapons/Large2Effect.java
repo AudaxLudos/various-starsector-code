@@ -22,6 +22,7 @@ public class Large2Effect implements EveryFrameWeaponEffectPlugin, OnFireEffectP
             this.miniSunEffect = new MiniSunEffect(weapon, engine);
             this.miniSunEntity = engine.addLayeredRenderingPlugin(this.miniSunEffect);
         } else if (!charging && this.miniSunEntity != null) {
+            engine.removeEntity(this.miniSunEntity);
             this.miniSunEffect = null;
             this.miniSunEntity = null;
         }
@@ -32,6 +33,8 @@ public class Large2Effect implements EveryFrameWeaponEffectPlugin, OnFireEffectP
         if (this.miniSunEffect != null) {
             projectile.getLocation().set(this.miniSunEntity.getLocation().x, this.miniSunEntity.getLocation().y);
             this.miniSunEffect.projectile = projectile;
+            this.miniSunEffect = null;
+            this.miniSunEntity = null;
         }
     }
 
@@ -91,7 +94,7 @@ public class Large2Effect implements EveryFrameWeaponEffectPlugin, OnFireEffectP
         @Override
         public boolean isExpired() {
             if (this.projectile != null) {
-                return this.projectile.isExpired();
+                return !this.engine.isEntityInPlay(this.projectile) || this.projectile.isExpired() || this.projectile.didDamage();
             }
             return false;
         }
