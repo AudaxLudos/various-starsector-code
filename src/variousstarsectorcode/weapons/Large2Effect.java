@@ -1,6 +1,7 @@
 package variousstarsectorcode.weapons;
 
 import com.fs.starfarer.api.combat.*;
+import com.fs.starfarer.api.combat.listeners.ApplyDamageResultAPI;
 import com.fs.starfarer.api.impl.campaign.ids.StarTypes;
 import com.fs.starfarer.api.util.IntervalUtil;
 import com.fs.starfarer.combat.CombatViewport;
@@ -11,7 +12,7 @@ import org.lwjgl.util.vector.Vector2f;
 import java.awt.*;
 import java.util.EnumSet;
 
-public class Large2Effect implements EveryFrameWeaponEffectPlugin, OnFireEffectPlugin {
+public class Large2Effect implements EveryFrameWeaponEffectPlugin, OnFireEffectPlugin, OnHitEffectPlugin {
     public CombatEntityAPI miniSunEntity;
     public MiniSunEffect miniSunEffect;
 
@@ -36,6 +37,11 @@ public class Large2Effect implements EveryFrameWeaponEffectPlugin, OnFireEffectP
             this.miniSunEffect = null;
             this.miniSunEntity = null;
         }
+    }
+
+    @Override
+    public void onHit(DamagingProjectileAPI projectile, CombatEntityAPI target, Vector2f point, boolean shieldHit, ApplyDamageResultAPI damageResult, CombatEngineAPI engine) {
+        new ExplosionEffect().explode(projectile, engine);
     }
 
     public static class MiniSunEffect extends BaseCombatLayeredRenderingPlugin {

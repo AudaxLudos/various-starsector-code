@@ -17,4 +17,5 @@
     "passThroughFightersOnlyWhenDestroyed":true,
 	"bulletSprite":"",
 	"onFireEffect":"variousstarsectorcode.weapons.Large2Effect",
+	"onHitEffect":"variousstarsectorcode.weapons.Large2Effect",
 }
